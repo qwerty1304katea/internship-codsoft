@@ -1,0 +1,43 @@
+print("~BASIC CALCULATOR~")
+def calculate(num1, num2, operation):
+  """Performs the specified arithmetic operation on the given numbers.
+
+  Args:
+    num1: First number.
+    num2: Second number.
+    operation: Operation to perform (e.g., '+', '-', '*', '/').
+
+  Returns:
+    Result of the calculation.
+  """
+
+  if operation == '+':
+    return num1 + num2
+  elif operation == '-':
+    return num1 - num2
+  elif operation == '*':
+    return num1 * num2
+  elif operation == '/':
+    if num2 == 0:
+      return "It cannot divide by zero."
+    else:
+      return num1 / num2
+  else:
+    return "Invalid operation."
+
+def main():
+  """Main function to prompt the user for input, perform the calculation, and display the result."""
+
+  while True:
+    num1 = float(input("Enter the first number: "))
+    num2 = float(input("Enter the second number: "))
+    operation = input("Enter the operation (+, -, *, /): ")
+
+    result = calculate(num1, num2, operation)
+    print("Result:", result)
+
+    if input("Do you want to continue (y/n)? ").lower() != 'y':
+      break
+
+if __name__ == "__main__":
+  main()
